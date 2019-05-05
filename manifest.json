@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "Flat Watch",
+    "version": "1.0",
+    "description": "Checks for leboncoin.fr or seloger.com new results and notify the user if there is some.",
+    "icons": {
+        "48": "icons/border-48.png"
+    },
+    "background": {
+        "scripts": ["notifier.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.leboncoin.fr/*", "*://*.seloger.com/*"],
+            "js": ["watcher.js"]
+        }
+    ],
+    "permissions": ["notifications", "storage"]
+}
